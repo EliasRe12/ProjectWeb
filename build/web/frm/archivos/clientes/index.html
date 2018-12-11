@@ -1,0 +1,210 @@
+<html>
+    <head>
+        <title>SistemaVictoria || Clientes</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../../css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link rel="icon" type="image/jpg" href="../../../img/login.jpg" />
+    </head>
+    <body style="background: url(../../../img/por7.jpeg); background-repeat: no-repeat;max-width: 100%;max-height: 100%">
+        <div id="confirmar"></div>
+        <div id="buscar"></div>
+        <div id="panelPrograma" class="panel panel-primary">
+            <div class="panel-heading centrado">Clientes<span id="susuario_usuario"></span></div>
+            <div class="panel-body" >
+                <form id="formPrograma">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Id</a></span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_cliente" name="id_cliente" type="text" class="form-control imput-sm" placeholder="Id" onkeypress="return SoloNumeros(event)">
+                        </div>
+                        <div class="col-md-1">
+                            <button id="botonBuscarIdCliente" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                        <div class="col-md-8"></div>
+                        <button id="botonImprimir" type="button" class="btn btn-primary btn-sm">Reporte</button>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Nombre</a></span>
+                        </div>
+                        <div class="col-md-11">
+                            <input id="nombre_cliente" name="nombre_cliente" type="text" class="form-control input-sm" placeholder="Nombre" onkeyup="this.value = this.value.toUpperCase()" onkeypress="return soloLetras(event)">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Apellido</a></span>
+                        </div>
+                        <div class="col-md-11">
+                            <input id="apellido_cliente" name="apellido_cliente" type="text" class="form-control input-sm" placeholder="Apellido" onkeyup="this.value = this.value.toUpperCase()" onkeypress="return soloLetras(event)">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Dirección</a></span>
+                        </div>
+                        <div class="col-md-11">
+                            <input id="direccion_cliente" name="direccion_cliente" type="text" class="form-control input-sm" placeholder="Dirección">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Teléfono</a></span>
+                        </div>
+                        <div class="col-md-11">
+                            <input id="telefono_cliente" name="telefono_cliente" type="text" class="form-control input-sm" placeholder="Teléfono">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">C.I</a></span>
+                        </div>
+                        <div class="col-md-3">
+                            <input id="ci_cliente" name="ci_cliente" type="text" class="form-control input-sm" placeholder="C.I.">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">RUC</a></span>
+                        </div>
+                        <div class="col-md-3">
+                            <input id="ruc_cliente" name="ruc_cliente" type="text" class="form-control input-sm" placeholder="RUC">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span><a style="color: #122b40; font-family:cursive">Ciudad</a></span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_ciudad" name="id_ciudad" type="text" class="form-control imput-sm" placeholder="Id" onkeypress="return SoloNumeros(event)">
+                        </div>
+                        <div class="col-md-1">
+                            <button id="botonBuscarIdCiudad" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                        <div class="col-md-2">
+                            <input id="nombre_ciudad" name="nombre_ciudad" type="text" class="form-control input-sm" placeholder="Ciudad" readonly="readonly">
+                        </div>
+                    </div> 
+                    <br>    
+                    <div class="row">
+                        <div class="col-md-2">
+                            <span><a style="color: #122b40; font-family:cursive">Nacionalidad</a></span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_nacionalidad" name="id_nacionalidad" type="text" class="form-control imput-sm" placeholder="Id" onkeypress="return SoloNumeros(event)">
+                        </div>
+                        <div class="col-md-1">
+                            <button id="botonBuscarIdNacionalidad" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                        <div class="col-md-2">
+                            <input id="nombre_nacionalidad" name="nombre_nacionalidad" type="text" class="form-control input-sm" placeholder="Nacionalidad" readonly="readonly">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--PANEL DE BOTONES-->
+            <div class="panel-footer centrado">
+                <button id="botonAgregar" type="button" class="btn btn-primary btn-sm">Agregar</button>
+                <button id="botonModificar" type="button" class="btn btn-primary btn-sm">Modificar</button>
+                <button id="BotonEliminar" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#confirmarEliminar">Eliminar</button>
+                <button id="botonSalir" type="button" class="btn btn-primary btn-sm">Salir</button>
+                
+            </div>
+        </div>
+        <div id="mensajes" class="well well-sm centrado">Mensaje del Sistema.</div>
+        <div class="modal fade" id="confirmarEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header centrado">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Mensaje del Sistema</h4>
+                    </div>
+                    <div class="modal-footer centrado">
+                        <button id="botonEliminarAlert" type="button" class="btn btn-primary btn-sm">Eliminar</button>
+                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../../js/jquery.min.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/funciones.js" type="text/javascript"></script>
+        <script src="../../../js/funciones.js" type="text/javascript"></script>
+        <script>
+        //verificarSesion(true);
+        //$("#buscar").css("display", "none");
+        //$("#id_cliente").focus();
+        //siguientecampo("#id_cliente", "#nombre_cliente", false);
+        $("#id_cliente").focusout(function (event) {
+            if ($("#id_cliente").val() === "") {
+                $("#id_cliente").val("0");
+            }
+            buscarIdCliente();
+        });
+        $("#id_ciudad").focusout(function (event) {
+            if ($("#id_ciudad").val() === "") {
+                $("#id_ciudad").val("0");
+            }
+            buscarIdCiudad();
+        });
+        $("#id_nacionalidad").focusout(function (event) {
+            if ($("#id_nacionalidad").val() === "") {
+                $("#id_nacionalidad").val("0");
+            }
+            buscarIdNacionalidad();
+        });
+        $("#botonBuscarIdCliente").on('click', function () {
+           $("#buscar").load("buscar.html");
+           $("#buscar").fadeIn("slow");
+           $("#panelPrograma").fadeOut("slow");
+        });
+        $("#botonBuscarIdCiudad").on('click', function () {
+           $("#buscar").load("buscarCiudad.html");
+           $("#buscar").fadeIn("slow");
+           $("#panelPrograma").fadeOut("slow");
+        });
+        $("#botonBuscarIdNacionalidad").on('click', function () {
+           $("#buscar").load("buscarNacionalidad.html");
+           $("#buscar").fadeIn("slow");
+           $("#panelPrograma").fadeOut("slow");
+        });
+        $("#botonAgregar").on('click', function () {
+          if (validarFormulario()) {
+              agregarCliente();
+          }  
+        });
+        $("#botonModificar").on('click', function () {
+         if(validarFormulario()) {
+             modificarCliente();
+         }   
+        });
+        $("#botonEliminarAlert").on('click', function () {
+           eliminarCliente();
+           $('#confirmarEliminar').modal('hide');
+        });
+        $("#botonSalir").on('click', function () {
+            location.href = "../../../menu.html";
+        });
+        
+        $("#botonImprimir").on('click', function () {
+                //var l = $("#listado").val();
+                var d = $("#id_cliente").val();
+                //var h = $("#hasta_id").val();
+                var jsp = "jsp/clientes.jsp";
+                window.open(jsp + "?&d=" + d );
+            });
+        </script>
+    </body>
+</html>

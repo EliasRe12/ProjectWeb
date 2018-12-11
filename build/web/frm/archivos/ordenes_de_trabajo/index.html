@@ -1,0 +1,328 @@
+<html>
+    <head>
+        <title>SistemaVictoria || Ordenes De Trabajo</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../../css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link rel="icon" type="image/jpg" href="img/login.jpg"/>
+    </head>
+    <body style="background: url(../../../img/por6.jpg); background-repeat: no-repeat; background-position: center;">
+        <div id="confirmar"></div>
+        <div id="buscar"></div>
+        <div id="panelLinea" class="panel panel-primary">
+            <div class="panel-heading centrado">Ordenes De Trabajo | Detalles</div>
+            <!-- DETALLES --> 
+            <div class="panel-body">
+                <form id="formLinea">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Id Línea</a></span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_ordendetrabajodetalle" name="id_ordendetrabajodetalle" type="text" class="form-control imput-sm" placeholder="Id" readonly="readonly">
+                        </div>
+                    </div>
+                    <br>                    
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Personal</a></span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_personal" name="id_personal" type="text" class="form-control imput-sm" placeholder="Id" onkeypress="return SoloNumeros(event)">
+                        </div>
+                        <div class="col-md-1">
+                            <button id="botonBuscarIdPersonal" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                        <div class="col-md-5">
+                            <input id="nombre_personal" name="nombre_personal" type="text" class="form-control input-sm" placeholder="Nombre" readonly="readonly">
+                        </div>
+                        <div class="col-md-2">
+                            <input id="apellido_personal" name="apellido_personal" type="text" class="form-control input-sm" placeholder="Apellido" readonly="readonly">
+                        </div>
+                        <div class="col-md-2">
+                            <input id="ci_personal" name="ci_personal" type="text" class="form-control input-sm" placeholder="C.I." readonly="readonly">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <!--PANEL DE BOTONES-->
+            <div class="panel-footer centrado">
+                <button id="botonAgregarLinea" type="button" class="btn btn-primary btn-sm">Agregar</button>
+                <button id="botonModificarLinea" type="button" class="btn btn-primary btn-sm">Modificar</button>
+                <button id="BotonEliminarLinea" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#confirmarEliminarLinea">Eliminar</button>
+                <button id="botonSalirLinea" type="button" class="btn btn-primary btn-sm">Salir</button>
+            </div>
+        </div>    
+        <!--OBRAS-->
+        <div id="panelPrograma" class="panel panel-primary">
+            <div class="panel-heading centrado">Ordenes De Trabajo<span id="susuario_usuario"></span></div>
+                <div class="panel-body">
+                    <form id="formPrograma">
+                        <div class="row">
+                            <div class="col-md-1">
+                                <span><a style="color: #122b40; font-family:cursive">Id</a></span>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="id_ordendetrabajo" name="id_ordendetrabajo" type="text" class="form-control imput-sm" placeholder="Id">
+                            </div>
+                            <div class="col-md-1">
+                                <button id="botonBuscarIdOrden_De_Trabajo" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <span><a style="color: #122b40; font-family:cursive">Fiscal De Obra</a></span>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="id_fiscaldeobra" name="id_fiscaldeobra" type="text" class="form-control imput-sm" placeholder="Id" onkeypress="return SoloNumeros(event)">
+                            </div>
+                            <div class="col-md-1">
+                                <button id="botonBuscarIdFiscal_De_Obra" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                            <div class="col-md-3">
+                                <input id="nombre_fiscaldeobra" name="nombre_fiscaldeobra" type="text" class="form-control input-sm" placeholder="Nombre" readonly="readonly">          
+                            </div>
+                            <div class="col-md-3">
+                                <input id="apellido_fiscaldeobra" name="apellido_fiscaldeobra" type="text" class="form-control input-sm" placeholder="Apellido" readonly="readonly">
+                            </div>
+                            <div class="col-md-2">
+                                <input id="ci_fiscaldeobra" name="ci_fiscaldeobra" type="text" class="form-control input-sm" placeholder="C.I." readonly="readonly">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <span><a style="color: #122b40; font-family:cursive">Ciudad</a></span>
+                            </div>
+                            <div class="col-md-1">
+                                <input id="id_ciudad" name="id_ciudad" type="text" class="form-control imput-sm" placeholder="Id" onkeypress="return SoloNumeros(event)">
+                            </div>
+                            <div class="col-md-1">
+                                <button id="botonBuscarIdCiudad" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                            </div>
+                            <div class="col-md-2">
+                                <input id="nombre_ciudad" name="nombre_ciudad" type="text" class="form-control input-sm" placeholder="Ciudad" readonly="readonly">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <span><a style="color: #122b40; font-family:cursive">Dirección</a></span>
+                            </div>
+                            <div class="col-md-4">
+                                <input id="direccion_ordendetrabajo" name="direccion_ordendetrabajo" type="text" placeholder="Dirección" class="form-control input-sm" onkeyup="this.value = this.value.toUpperCase()"> 
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <span><a style="color: #122b40; font-family:cursive">Estado</a></span>
+                            </div>
+                            <div class="col-md-2">
+                                <input id="estado_ordendetrabajo" name="estado_ordendetrabajo" type="text" class="form-control input-sm" placeholder="Estado" onkeyup="this.value = this.value.toUpperCase()">
+                            </div>
+                        </div>
+                        <br>             
+                        <div class="row">
+                            <div class="col-md-2">
+                                <span><a style="color: #122b40; font-family:cursive">Descripción</a></span>
+                            </div>
+                            <div class="col-md-4">
+                                <input id="descripcion_ordendetrabajo" name="descripcion_ordendetrabajo" type="text" placeholder="Descripción" class="form-control input-sm"> 
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <span><a style="color: #122b40; font-family:cursive">Fecha de Inicio</a></span>
+                            </div>
+                            <div class="col-md-3">
+                                <input id="fechainicio_ordendetrabajo" name="fechainicio_ordendetrabajo" type="date" class="form-control input-sm"> 
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-2">
+                                <span><a style="color: #122b40; font-family:cursive">Fecha de Entrega</a></span>
+                            </div>
+                            <div class="col-md-3">
+                                <input id="fechaentrega_ordendetrabajo" name="fechaentrega_ordendetrabajo" type="date" class="form-control input-sm"> 
+                            </div>
+                        </div>
+                    </form>
+                    <div class="container-fluid">
+                        <div id="detalle" hidden="">
+                            <table class="table table-bordered table-striped table-hover">
+                                <thead>
+                                <th class="centrado" colspan=5 style="background: #fff">Personales</th>
+                                <tr>
+                                    <th class="centrado" style="background: #fff">Id</th>
+                                    <th class="centrado" style="background: #fff">Nombre</th>
+                                    <th class="centrado" style="background: #fff">Apellido</th>
+                                    <th class="centrado" style="background: #fff">C.I</th>
+                                    <th class="centrado" style="background: #fff"><button onclick="agregarLinea()" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-plus"></span></button></th>
+                                </tr>
+                                </thead>
+                                <tbody id="contenidoDetalle" style="background: #fff">
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            <!--PANEL DE BOTONES-->
+            <div class="panel-footer centrado">
+                <button id="botonAgregar" type="button" class="btn btn-primary btn-sm">Agregar</button>
+                <button id="botonModificar" type="button" class="btn btn-primary btn-sm">Modificar</button>
+                <button id="BotonEliminar" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#confirmarEliminar">Eliminar</button>
+                <button id="botonSalir" type="button" class="btn btn-primary btn-sm">Salir</button>
+            </div>
+        </div>
+        <div id="mensajes" class="well well-sm centrado">Mensaje del Sistema.</div>
+        <div class="modal fade" id="confirmarEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header centrado">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabel">Mensaje del Sistema</h4>
+                    </div>
+                    <div class="modal-body">
+                        Está seguro de eliminar estos datos?
+                    </div>
+                    <div class="modal-footer centrado">
+                        <button id="botonEliminarAlert" type="button" class="btn btn-primary btn-sm">Eliminar</button>
+                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="confirmarEliminarLinea" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header  centrado">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <h4 class="modal-title" id="myModalLabelLinea">Mensaje del Sistema</h4>
+                    </div>
+                    <div class="modal-body">
+                        Está seguro de eliminar esta linea?
+                    </div>
+                    <div class="modal-footer centrado">
+                        <button id="botonEliminarAlertLinea" type="button" class="btn btn-primary btn-sm">Eliminar</button>
+                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <script src="../../../js/jquery.min.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/funciones.js" type="text/javascript"></script>
+        <script src="../../../js/funciones.js" type="text/javascript"></script>
+    <script>
+        //verificarSesion(true);
+        $("#buscar").css("display", "none");
+        $("#id_ordendetrabajo").focus();
+        $("#panelLinea").css("display", "none");
+        //siguientecampo("#id_presupuesto", "#nombre_presupuesto", false);
+        //siguientecampo("#id_color", "#cantidad_ordendetrabajodetalle", false);
+        
+        if ($("#id_ordendetrabajo").val() === "0") {
+            siguienteCampo("#id_cliente", "#botonAgregar", false);
+                                          
+        } else {
+            siguienteCampo("#id_cliente", "#botonModificar", false);
+        }
+        
+        $("#id_ordendetrabajo").focusout(function (event) {
+            if ($("#id_ordendetrabajo").val() === "") {
+                $("#id_ordendetrabajo").val("0");
+            }
+            buscarIdOrden_De_Trabajo();
+            var id = $("#id_ordendetrabajo").val();
+            $("#id_ordendetrabajo").val("0");
+            var img = "<img src='../../../img/login/" + id + ".jpg' alt=''>";
+            $("#foto").html(img);
+        });
+        
+        $("#id_personal").focusout(function (event) {
+            if ($("#id_personal").val() === "") {
+                $("#id_personal").val("0");
+            }
+            buscarIdPersonal();
+        });
+        
+        $("#id_ciudad").focusout(function (event) {
+            if ($("#id_ciudad").val() === "") {
+                $("#id_ciudad").val("0");
+            }
+            buscarIdCiudad();
+        });
+        
+        $("#id_fiscaldeobra").focusout(function (event) {
+            if ($("#id_fiscaldeobra").val() === "") {
+                $("#id_fiscaldeobra").val("0");
+            }
+            buscarIdFiscal_De_Obra();
+        });
+        
+        $("#botonBuscarIdFiscal_De_Obra").on('click', function () {
+           $("#buscar").load("buscarFiscal_De_Obra.html");
+           $("#buscar").fadeIn("slow");
+           $("#panelPrograma").fadeOut("slow");
+        });
+        
+        $("#botonBuscarIdCiudad").on('click', function () {
+            $("#buscar").load("buscarCiudad.html");
+            $("#buscar").fadeIn("slow");
+            $("#panelPrograma").fadeOut("slow");
+        });
+                
+        $("#botonBuscarIdOrden_De_Trabajo").on('click', function () {
+           $("#buscar").load("buscar.html");
+           $("#buscar").fadeIn("slow");
+           $("#panelPrograma").fadeOut("slow");
+        });
+        
+        $("#botonBuscarIdPersonal").on('click', function () {
+           $("#buscar").load("buscarPersonal.html");
+           $("#buscar").fadeIn("slow");
+           $("#panelPrograma").fadeOut("slow");
+        });
+              
+        $("#botonAgregar").on('click', function () {
+            if (validarFormulario()) {
+                agregarOrden_De_Trabajo();
+            }  
+        });
+        $("#botonModificar").on('click', function () {
+            if(validarFormulario()) {
+                modificarOrden_De_Trabajo();
+            }   
+        });
+        $("#botonEliminarAlert").on('click', function () {
+           eliminarOrden_De_Trabajo();
+           $('#confirmarEliminar').modal('hide');
+        });
+        $("#botonSalir").on('click', function () {
+            location.href = "../../../menu.html";
+        });
+        $("#botonAgregarLinea").on('click', function () {
+            agregarOrden_De_Trabajo_Detalle();
+
+        });
+        $("#botonModificarLinea").on('click', function () {
+            modificarOrden_De_Trabajo_Detalle();
+        });
+        $("#botonEliminarAlertLinea").on('click', function () {
+            eliminarOrden_De_Trabajo_Detalle();
+        $('#confirmarEliminarLinea').modal('hide');
+        });
+        $("#botonSalirLinea").on('click', function () {
+            $("#panelLinea").fadeOut("slow");
+            $("#panelPrograma").fadeIn("slow");
+        });
+    </script>
+    </body>
+</html>

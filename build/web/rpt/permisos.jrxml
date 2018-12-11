@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="permisos" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a5166b81-458a-4eea-8a67-b227c102d638">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="DESDE" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<parameter name="HASTA" class="java.lang.Integer">
+		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from permisos p, roles r, formularios f where p.id_rol=r.id_rol and p.id_formulario=f.id_formulario and p.id_permiso between $P{DESDE} and $P{HASTA}]]>
+	</queryString>
+	<field name="id_permiso" class="java.lang.Integer"/>
+	<field name="id_rol" class="java.lang.Integer"/>
+	<field name="id_formulario" class="java.lang.Integer"/>
+	<field name="nombre_rol" class="java.lang.String"/>
+	<field name="nombre_formulario" class="java.lang.String"/>
+	<field name="codigo_formulario" class="java.lang.String"/>
+	<field name="id_menu" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="201" y="0" width="126" height="30" uuid="4d58762e-98b9-4090-8ea6-7af2ab02eeac"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Candara" size="24"/>
+				</textElement>
+				<text><![CDATA[Permisos]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="165" height="20" uuid="7b164829-62e0-48fa-afe0-843c59cdeb1b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="15"/>
+				</textElement>
+				<text><![CDATA[Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="165" y="0" width="218" height="20" uuid="1fbaf946-e52e-44d8-acac-a837695b4b27"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="15"/>
+				</textElement>
+				<text><![CDATA[Rol]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="383" y="0" width="172" height="20" uuid="697224e4-4cc9-41ae-8d33-20637e0a02a5"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Californian FB" size="15"/>
+				</textElement>
+				<text><![CDATA[Formulario]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="165" height="20" uuid="366af8a8-a562-4f78-b197-752af48f8452"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{id_permiso}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="165" y="0" width="218" height="20" uuid="e9f37a8c-912d-4353-9e31-ee099d59bc7b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombre_rol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="383" y="0" width="172" height="20" uuid="66548c9e-805a-4fea-a756-da3fa5e9ec4e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nombre_formulario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="30" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

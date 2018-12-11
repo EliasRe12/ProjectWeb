@@ -1,0 +1,190 @@
+<html>
+    <head>
+        <title>SistemaVictoria || Productos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../../../css/bootstrap-theme.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+        <link href="../../../css/estilos.css" rel="stylesheet" type="text/css"/>
+        <link rel="icon" type="image/jpg" href="../../../img/login.jpg" />
+    </head>
+    <body style="background: url(../../../img/por8.jpg); background-repeat: no-repeat; background-position: center;">
+        <div id="confirmar"></div>
+        <div id="buscar"></div>
+        <div id="panelPrograma" class="panel panel-primary">
+            <div class="panel-heading centrado">Productos<span id="susuario_usuario"></span></div>
+            <div class="panel-body">
+                <form id="formPrograma">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Id</a></span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_producto" name="id_producto" type="text" class="form-control imput-sm" placeholder="Id" onkeypress="return SoloNumeros(event)">
+                        </div>
+                        <div class="col-md-1">
+                            <button id="botonBuscarIdProducto" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Nombre</a></span>
+                        </div>
+                        <div class="col-md-10">
+                            <input id="nombre_producto" name="nombre_producto" type="text" class="form-control input-sm" placeholder="Nombre" onkeyup="this.value = this.value.toUpperCase()" onkeypress="return soloLetras(event)">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Precio</a></span>
+                        </div>
+                        <div class="col-md-2">
+                            <input id="precio_producto" name="precio_producto" type="text" class="form-control input-sm" placeholder="Precio" onkeyup="this.value = this.value.toUpperCase()" onkeypress="return SoloNumeros(event)">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Color</a></span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_color" name="id_color" type="text" class="form-control imput-sm" placeholder="Id" onkeypress="return SoloNumeros(event)">
+                        </div>
+                        <div class="col-md-1">
+                            <button id="botonBuscarIdColor" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                        <div class="col-md-3">
+                            <input id="nombre_color" name="nombre_color" type="text" class="form-control input-sm" placeholder="Color" readonly="readonly">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Marca</a></span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_marca" name="id_marca" type="text" class="form-control imput-sm" placeholder="Id" onkeypress="return SoloNumeros(event)">
+                        </div>
+                        <div class="col-md-1">
+                            <button id="botonBuscarIdMarca" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                        <div class="col-md-3">
+                            <input id="nombre_marca" name="nombre_marca" type="text" class="form-control input-sm" placeholder="Marca" readonly="readonly">
+                        </div>
+                    </div>
+                    <br>                           
+                    <div class="row">
+                        <div class="col-md-1">
+                            <span><a style="color: #122b40; font-family:cursive">Proveedor</a></span>
+                        </div>
+                        <div class="col-md-1">
+                            <input id="id_proveedor" name="id_proveedor" type="text" class="form-control imput-sm" placeholder="Id" onkeypress="return SoloNumeros(event)">
+                        </div>
+                        <div class="col-md-1">
+                            <button id="botonBuscarIdProveedor" type="button" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                        <div class="col-md-3">
+                            <input id="nombre_proveedor" name="nombre_proveedor" type="text" class="form-control input-sm" placeholder="Proveedor" readonly="readonly">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <br>
+            <div class="panel-footer centrado">
+                <button id="botonAgregar" type="button" class="btn btn-primary btn-sm">Agregar</button>
+                <button id="botonModificar" type="button" class="btn btn-primary btn-sm">Modificar</button>
+                <button id="BotonEliminar" type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#confirmarEliminar">Eliminar</button>
+                <button id="botonSalir" type="button" class="btn btn-primary btn-sm">Salir</button>
+            </div>
+        </div>
+        <div id="mensajes" class="well well-sm centrado">Mensaje del Sistema.</div>
+        <div class="modal fade" id="confirmarEliminar" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+                <div class="modal-content">
+                    <div class="modal-header centrado">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">
+                                &times;</span><span class="sr-only">Close</span></button>
+                                <h4 class="modal-title" id="myModalLabel">Mensaje del Sistema</h4>
+                    </div>
+                    <div class="modal-footer centrado">
+                        <button id="botonEliminarAlert" type="button" class="btn btn-primary btn-sm">Eliminar</button>
+                        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="../../../js/jquery.min.js" type="text/javascript"></script>
+        <script src="../../../js/bootstrap.min.js" type="text/javascript"></script>
+        <script src="js/funciones.js" type="text/javascript"></script>
+        <script src="../../../js/funciones.js" type="text/javascript"></script>
+    <script>
+        //verificarSesion(true);
+        //$("#buscar").css("display", "none");
+        //$("#id_producto").focus();
+        //siguientecampo("#id_producto", "#nombre_producto", false);
+        $("#id_producto").focusout(function (event) {
+            if ($("#id_producto").val() === "") {
+                $("#id_producto").val("0");
+            }
+            buscarIdProducto();
+        });
+        $("#id_color").focusout(function (event) {
+            if ($("#id_color").val() === "") {
+                $("#id_color").val("0");
+            }
+            buscarIdColor();
+        });
+        $("#id_marca").focusout(function (event) {
+            if ($("#id_marca").val() === "") {
+                $("#id_marca").val("0");
+            }
+            buscarIdMarca();
+        });
+        $("#id_proveedor").focusout(function (event) {
+            if ($("#id_proveedor").val() === "") {
+                $("#id_proveedor").val("0");
+            }
+            buscarIdProveedor();
+        });
+        $("#botonBuscarIdProducto").on('click', function () {
+           $("#buscar").load("buscar.html");
+           $("#buscar").fadeIn("slow");
+           $("#panelPrograma").fadeOut("slow");
+        });
+        $("#botonBuscarIdColor").on('click', function () {
+           $("#buscar").load("buscarColor.html");
+           $("#buscar").fadeIn("slow");
+           $("#panelPrograma").fadeOut("slow");
+        });
+        $("#botonBuscarIdMarca").on('click', function () {
+           $("#buscar").load("buscarMarca.html");
+           $("#buscar").fadeIn("slow");
+           $("#panelPrograma").fadeOut("slow");
+        });
+        $("#botonBuscarIdProveedor").on('click', function () {
+           $("#buscar").load("buscarProveedor.html");
+           $("#buscar").fadeIn("slow");
+           $("#panelPrograma").fadeOut("slow");
+        });
+        $("#botonAgregar").on('click', function () {
+            if (validarFormulario()) {
+                agregarProducto();
+            }  
+        });
+        $("#botonModificar").on('click', function () {
+            if(validarFormulario()) {
+                modificarProducto();
+            }   
+        });
+        $("#botonEliminarAlert").on('click', function () {
+           eliminarProducto();
+           $('#confirmarEliminar').modal('hide');
+        });
+        $("#botonSalir").on('click', function () {
+            location.href = "../../../menu.html";
+        });
+    </script>
+    </body>
+</html>
